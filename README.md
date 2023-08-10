@@ -23,33 +23,45 @@ The following API endpoints are available for managing tasks:
 
 1. Clone this repository:
    ```bash
-   $ git clone https://github.com/Homeroida/todo-API.git
-   $ cd todo-API
-2. Install project dependencies:
+   git clone https://github.com/Homeroida/todo-API.git
+   cd todo-API
+2. Download django usig pip
    ```bash
-   $ pip install -r requirements.txt
-3. Apply database migrations:
+   sudo apt install python3-pip -y
+   pip install django 
+3. Install project dependencies:
+   ```bash
+   pip install -r requirements.txt
+4. Apply database migrations:
    ``` bash
-   $ python manage.py migrate
-4. Start the development server:
+   python3 manage.py makemigrations
+5. Start the development server:
    ```bash
-   $ python manage.py runserver
+   python3 manage.py migrate
+6. Create SuperUser:
+   ```bash
+   python3 manage.py createsuperuser
+7. Run Server:
+   ```bash
+   python3 manage.py runserver
+   
+   
 
 ## Usage
 You can use tools like curl or API testing tools like Postman to interact with the Todo app API. Here are a few examples:
 
 1. Retrieve all tasks:
    ```bash
-   $ curl http://localhost:8000/api/tasks/
+   curl http://localhost:8000/api/tasks/
 2. Create new task:
    ```bash
-   $ curl -X POST -H "Content-Type: application/json" -d '{"title": "Finish README", "description": "Write the README file for the project"}' http://localhost:8000/api/tasks/
+   curl -X POST -H "Content-Type: application/json" -d '{"title": "Finish README", "description": "Write the README file for the project"}' http://localhost:8000/api/tasks/
 3. Update a Task:
    ```bash
-   $ curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Title", "completed": true}' http://localhost:8000/api/tasks/{task_id}/ 
+   curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Title", "completed": true}' http://localhost:8000/api/tasks/{task_id}/ 
 4. Delete a Task:
    ```bash
-   $ curl -X DELETE http://localhost:8000/api/tasks/{task_id}/
+   curl -X DELETE http://localhost:8000/api/tasks/{task_id}/
 
 ## Contact
 
